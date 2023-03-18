@@ -79,18 +79,20 @@ With the above considerations in mind, I have decided to use a BERT (Bidirection
 A high level workflow of the steps to take are:
 
 1. Retrieve dataset and load into pandas dataframes
-2. 
+2. Identify unique keywords in training dataset
+3. Remove stopwords and common words to reduce noise
+4. Build frame that aligns with BERT inputs
+5. Define the classifier model
+6. Define evaluation metrics
+7. Fit the model to train data
+8. Calculate Predictions
+9. Calculate loss and evaluation metrics
+10. Report on results based on a binary classifier
 
+This project will be run in a Jupyter Notebook and will be delivered according to the specifications required by the course.
 
+### References
+A. Kaggle Competition: Natural Language Processing with Disaster Tweets
+  URL: https://www.kaggle.com/competitions/nlp-getting-started/code
 
-In this final section, summarize a theoretical workflow for approaching a solution given the problem. Provide thorough discussion for what strategies you may consider employing, what analysis of the data might be required before being used, or which algorithms will be considered for your implementation. The workflow and discussion that you provide should align with the qualities of the previous sections. Additionally, you are encouraged to include small visualizations, pseudocode, or diagrams to aid in describing the project design, but it is not required. The discussion should clearly outline your intended workflow of the capstone project.
-
------------
-
-**Before submitting your proposal, ask yourself. . .**
-
-- Does the proposal you have written follow a well-organized structure similar to that of the project template?
-- Is each section (particularly **Solution Statement** and **Project Design**) written in a clear, concise and specific fashion? Are there any ambiguous terms or phrases that need clarification?
-- Would the intended audience of your project be able to understand your proposal?
-- Have you properly proofread your proposal to assure there are minimal grammatical and spelling mistakes?
-- Are all the resources used for this project correctly cited and referenced?
+B. Research paper: "Identification of Disaster-Related Tweets Using Natural Language Processing: International Conference on Recent Trends in Artificial Intelligence, IOT, Smart Cities & Applications (ICAISC-2020)" by Goswami et.at.
