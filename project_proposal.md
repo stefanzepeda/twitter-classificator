@@ -20,9 +20,18 @@ This project will aim to build a Machine Learning model that can correctly ident
 
 ### Datasets and Inputs
 
-In this section, the dataset(s) and/or input(s) being considered for the project should be thoroughly described, such as how they relate to the problem and why they should be used. Information such as how the dataset or input is (was) obtained, and the characteristics of the dataset or input, should be included with relevant references and citations as necessary It should be clear how the dataset(s) or input(s) will be used in the project and whether their use is appropriate given the context of the problem.
+The dataset for this problem was sourced from the Kaggle competition "Natural Language Processing with Disaster Tweets". The dataset consists of a database of 10,000 hand classified tweets. The dataset is split into two files
+*Train.csv - Contains a set of tweets with their human classified labels identifying the tweet as related to an emergency or not.
+*Test.csv - Contains another set of tweets this time without a human classified label. This file will be used to calculate the accuracy of our model
 
+The datasets have the following columns:
+*id - a unique identifier for each tweet
+*text - the text of the tweet
+*location - the location the tweet was sent from (may be blank)
+*keyword - a particular keyword from the tweet (may be blank)
+*target - in train.csv only, this denotes whether a tweet is about a real disaster (1) or not (0)
 
+As part of this project I will generate labels (1) for a disaster related tweet or (0) for a non-disaster tweet.
 
 ### Solution Statement
 _(approx. 1 paragraph)_
