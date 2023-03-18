@@ -34,19 +34,30 @@ The datasets have the following columns:
 As part of this project I will generate labels (1) for a disaster related tweet or (0) for a non-disaster tweet.
 
 ### Solution Statement
-_(approx. 1 paragraph)_
 
-In this section, clearly describe a solution to the problem. The solution should be applicable to the project domain and appropriate for the dataset(s) or input(s) given. Additionally, describe the solution thoroughly such that it is clear that the solution is quantifiable (the solution can be expressed in mathematical or logical terms) , measurable (the solution can be measured by some metric and clearly observed), and replicable (the solution can be reproduced and occurs more than once).
+This project proposes using a Machine Learning model by which users can evaluate newly posted tweets. The model will use Natural Language Processing techniques to output a binary result of (1) to indicate that the tweet relates to an emergency disaster event. Those events can be aggregated and then be looked at humans to further disseminate if necessary. 
 
 ### Benchmark Model
-_(approximately 1-2 paragraphs)_
 
-In this section, provide the details for a benchmark model or result that relates to the domain, problem statement, and intended solution. Ideally, the benchmark model or result contextualizes existing methods or known information in the domain and problem given, which could then be objectively compared to the solution. Describe how the benchmark model or result is measurable (can be measured by some metric and clearly observed) with thorough detail.
+Two benchmarks will be used as part of this project:
+1. A published paper in this domain: Identification of Disaster-Related Tweets Using Natural Language Processing: International Conference on Recent Trends in Artificial Intelligence, IOT, Smart Cities & Applications (ICAISC-2020) by Goswami et.al.
+2. The top contributor to the Kaggle competition "Natural Language Processing with Disaster Tweets"
+
+In both those cases, the highest F1 score achieved is 0.84 in terms of the harmonic mean of precision and recall. Meaning a healthy balance between false positives and false negatives.
 
 ### Evaluation Metrics
-_(approx. 1-2 paragraphs)_
 
-In this section, propose at least one evaluation metric that can be used to quantify the performance of both the benchmark model and the solution model. The evaluation metric(s) you propose should be appropriate given the context of the data, the problem statement, and the intended solution. Describe how the evaluation metric(s) are derived and provide an example of their mathematical representations (if applicable). Complex evaluation metrics should be clearly defined and quantifiable (can be expressed in mathematical or logical terms).
+This project will use the evaluaton metrics proposed by the Kaggle competition "Natural Language Processing with Disaster Tweets" in the form of an F1 score. This score gives us a good perspective of the balance between precision and recall. The reason why these two measures make sense to this problem is that it is desired to have the lowest level of false positives due to the impact in the spread of tweets that are not an emergency.
+F1 score is defined as:
+``F1 = 2 * (precision * recall) / (precision + recall)``
+where:
+``𝑝𝑟𝑒𝑐𝑖𝑠𝑖𝑜𝑛=𝑇𝑃𝑇𝑃+𝐹𝑃``
+``𝑟𝑒𝑐𝑎𝑙𝑙=𝑇𝑃𝑇𝑃+𝐹𝑁``
+
+and:
+``True Positive [TP] = your prediction is 1, and the ground truth is also 1 - you predicted a positive and that's true!``
+``False Positive [FP] = your prediction is 1, and the ground truth is 0 - you predicted a positive, and that's false.``
+``False Negative [FN] = your prediction is 0, and the ground truth is 1 - you predicted a negative, and that's false.``
 
 ### Project Design
 _(approx. 1 page)_
