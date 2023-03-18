@@ -49,18 +49,39 @@ In both those cases, the highest F1 score achieved is 0.84 in terms of the harmo
 
 This project will use the evaluaton metrics proposed by the Kaggle competition "Natural Language Processing with Disaster Tweets" in the form of an F1 score. This score gives us a good perspective of the balance between precision and recall. The reason why these two measures make sense to this problem is that it is desired to have the lowest level of false positives due to the impact in the spread of tweets that are not an emergency.
 F1 score is defined as:
+
 ``F1 = 2 * (precision * recall) / (precision + recall)``
+
 where:
-``𝑝𝑟𝑒𝑐𝑖𝑠𝑖𝑜𝑛=𝑇𝑃𝑇𝑃+𝐹𝑃``
-``𝑟𝑒𝑐𝑎𝑙𝑙=𝑇𝑃𝑇𝑃+𝐹𝑁``
+
+``precision = TP/(TP+FP)``
+
+``recall = TP/(TP+FN)``
 
 and:
+
 ``True Positive [TP] = your prediction is 1, and the ground truth is also 1 - you predicted a positive and that's true!``
+
 ``False Positive [FP] = your prediction is 1, and the ground truth is 0 - you predicted a positive, and that's false.``
+
 ``False Negative [FN] = your prediction is 0, and the ground truth is 1 - you predicted a negative, and that's false.``
 
 ### Project Design
-_(approx. 1 page)_
+
+As I approach this project two big considerations drive my design:
+
+1. The size of the training dataset is relatively small (10,000 hand classified tweets)
+2. My personal goals align with learning NLP transformer architecture
+
+
+With the above considerations in mind, I have decided to use a BERT (Bidirectional Encoder Representations from Transformers) classification model. Although a deep learning approach like this would usually take a long time, I will leverage some of the pre-trained BERT models included with TensorFlow in order to speed up the set up for this project. I will still fine tune the model for this specific task, hopefully aiming to yield accurate results with the small training corpus. I want to give credit to this approach to a Kaggle competitor Kyrgyzstan Bishkek who submitted a design I used as inspiration. Other possible classifiers to explore a Decision Tree Classifier or an LSTM network.
+
+A high level workflow of the steps to take are:
+
+1. Retrieve dataset and load into pandas dataframes
+2. 
+
+
 
 In this final section, summarize a theoretical workflow for approaching a solution given the problem. Provide thorough discussion for what strategies you may consider employing, what analysis of the data might be required before being used, or which algorithms will be considered for your implementation. The workflow and discussion that you provide should align with the qualities of the previous sections. Additionally, you are encouraged to include small visualizations, pseudocode, or diagrams to aid in describing the project design, but it is not required. The discussion should clearly outline your intended workflow of the capstone project.
 
